@@ -1,5 +1,5 @@
 # AntBms-to-Ve.Can-Victron-Venus
-Ant Bms decoding / encoding and transfer to Venus Gx, Cerbo, bbb ect for Ve.Can input. (according RecBms, BYD, LG, CAN protocol)
+Ant Bms decoding / encoding and transfer to Venus Gx, Cerbo, bbb ect to Ve.Can input. (according RecBms, BYD, LG, CAN protocol)
 
 Part list:                                                                                                                         
 -teensy3.2(connect to AntDisplayPort pin 9, 10 serial2 port)                                                                       
