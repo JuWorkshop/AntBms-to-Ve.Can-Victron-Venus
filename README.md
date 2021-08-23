@@ -1,6 +1,9 @@
 # AntBms-to-Ve.Can-Victron-Venus
 Ant Bms decoding / encoding and transfer to Venus Gx, Cerbo, bbb ect to Ve.Can input. (according RecBms, BYD, LG, CAN protocol)
 
+Add Library : FlexCAN_T4
+
+
 Part list:                                                                                                                         
 -teensy3.2(serial2 port: pin 9 and 10 connect to AntDisplayPort (rx/tx).                                                           
 -120 Ohm 1/2w CAN bus terminator                                                                                                   
