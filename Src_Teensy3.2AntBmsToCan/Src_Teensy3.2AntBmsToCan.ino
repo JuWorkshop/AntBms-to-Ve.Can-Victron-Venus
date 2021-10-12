@@ -60,8 +60,8 @@ CAN_message_t msg;
   msg.len = 8;
   msg.buf[0] = lowByte(uint16_t(volt * 10));
   msg.buf[1] = highByte(uint16_t(volt * 10));
-  msg.buf[2] = lowByte(long(amp ));
-  msg.buf[3] = highByte(long(amp ));
+  msg.buf[2] = lowByte(long(-amp ));
+  msg.buf[3] = highByte(long(-amp ));
   msg.buf[4] = lowByte(int16_t(t_fet * 10));
   msg.buf[5] = highByte(int16_t(t_fet * 10));
   msg.buf[6] = 0;
@@ -150,11 +150,11 @@ trame_ok += 1;//  Serial.println("trame_ok :");
 
 void extract_value(){
    uint32_t tmp = ((((uint8_t)incomingByte[70])<< 24) + (((uint8_t)incomingByte[71])<< 16)+ (((uint8_t)incomingByte[72])<< 8)+ ((uint8_t)incomingByte[73]));
-    if (tmp > 2147483648){amp= tmp;}
-    else{ amp = (-(2*2147483648)+tmp);}
+    if (tmp > 2147483648){amp= (-(2*2147483648)+tmp);}
+    else{ amp = tmp;}
    uint32_t tmp2 = ((((uint8_t)incomingByte[111])<< 24) + (((uint8_t)incomingByte[112])<< 16)+ (((uint8_t)incomingByte[113])<< 8)+ ((uint8_t)incomingByte[114]));
-    if (tmp2 > 2147483648){puiss= tmp2;}
-    else{ puiss = (-(2*2147483648)+tmp2);}
+    if (tmp2 > 2147483648){puiss= (-(2*2147483648)+tmp2);}
+    else{ puiss = tmp2;}
    nbr_cell = (uint8_t)incomingByte[123]; 
    soc = (uint8_t)incomingByte[74]; 
    volt = ((((uint8_t)incomingByte[4])<< 8) + (uint8_t)incomingByte[5]); 
